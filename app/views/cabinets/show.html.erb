@@ -1,0 +1,23 @@
+<main class="tiroir">
+  <button type="button" name="button" onclick="history.back()">Retour</button>
+  <p class="tiroir__nom"><%= @tiroir.nom %></p>
+  <%if (@tabNotes != nil) %>
+  <ul>
+    <% @tabNotes.each do |n| %>
+    <li>
+      <ul>
+        <li><%= n.titre %></li>
+        <li><%= n.contenu %></li>
+      </ul>
+    </li>
+    <% end %>
+  </ul>
+  <% end %>
+  <p>
+    <a href="/notes/new?cabinet=<%= @tiroir.id %>">Ajouter une note</a>
+  </p>
+  <p>
+    <a href="/cabinets/<%= @tiroir.id %>/edit">Modifier le tiroir</a>
+    <%= button_to("Supprimer le tiroir", cabinets_path(@tiroir), method: :delete) %>
+  </p>
+</main>

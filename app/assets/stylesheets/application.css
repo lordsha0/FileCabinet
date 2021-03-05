@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/**
+* Fait par: Brian Rhéaume-Michaud
+* Feuille de style globale pour le projet FileCabinet
+**/
+/* Styles Généraux */
+html {
+  background-color: #333;
+  color: #fff;
+}
+
+a {
+  color: #F6D381;
+  font-style: italic;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #D66BA0;
+  text-decoration: underline;
+}
+
+.entete {
+  margin: 30px 0;
+}
+.entete__lien {
+  color: #fff;
+  padding: 2px 6px;
+  text-decoration: none;
+  border: 2px solid #fff;
+  border-radius: 3px;
+}
+
+/* Styles Modulaires */
+.formulaire__groupe {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+/*# sourceMappingURL=application.css.map */

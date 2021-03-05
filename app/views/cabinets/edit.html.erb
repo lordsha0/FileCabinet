@@ -1,0 +1,11 @@
+<main>
+  <h1 class=""></h1>
+  <%= render('modules/erreur', current: @tiroir) %>
+  <%= form_for(@tiroir, class: :formulaire) do |field| %>
+    <p class="formulaire__groupe">
+      <%= field.label :nom, class: :formulaire__libelle %>
+      <%= field.text_field :nom, class: :formulaire__champ, value: @tiroir.nom %>
+    </p>
+    <%= field.submit value: "Modifier le tiroir", class: :formulaire__bouton %>
+    <% end %>
+</main>

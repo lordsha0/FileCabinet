@@ -1,0 +1,7 @@
+<% if(current.errors.any?) %>
+  <p class="formulaire__erreur">
+      <% current.errors.full_messages.each do |msg|  %>
+      <%= msg %>
+      <% end %>
+  </p>
+<% end %>

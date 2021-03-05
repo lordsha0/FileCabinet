@@ -1,0 +1,15 @@
+<main class="accueil" role="content">
+  <h1 class="accueil__titre">FileCabinet - Gardez un oeil sur vos notes!</h1>
+  <a class="accueil__lien" href="/cabinets">Voir tous mes tiroirs ></a>
+  <p class="accueil__tiroirTitle">Voici votre dernier tiroir:</p>
+  <div class="accueil__tiroir">
+    <a class="accueil__lien" href="/cabinets/<%= @derniertiroir.id %>"><%= @derniertiroir.nom %></a>
+    <% if(@tabNotes != nil) %>
+    <ul>
+      <% @tabNotes.each do |n| %>
+        <li><a href="/notes/<%= n.id %>"><%= n.titre %></a></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+</main>

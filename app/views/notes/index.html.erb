@@ -1,0 +1,14 @@
+<main>
+  <ul>
+    <%= @notes %>
+    <% @notes.each do |n|%>
+    <li>
+      <ul>
+        <li><%= n.titre %></li>
+        <li><%= n.contenu %></li>
+        <li><%= n.cabinet_id %></li>
+      </ul>
+    </li>
+    <% end %>
+  </ul>
+</main>

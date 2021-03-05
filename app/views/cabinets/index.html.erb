@@ -1,0 +1,25 @@
+<main class="">
+  <h1 class=""></h1>
+  <a href="/cabinets/new">Ajouter un tiroir</a>
+  <ul>
+  <% @tabtiroirs.each do |tiroir| %>
+    <li>
+      <ul>
+        <li>
+          <a href="/cabinets/<%= tiroir.id %>"><%= tiroir.nom %></a>
+          <ul>
+            <% @tabNotes.each do |n| %>
+              <% if(n.cabinet_id == tiroir.id) %>
+              <li><a href="/notes/<%= n.id %>"><%= n.titre %></a></li>
+              <% end %>
+            <% end %>
+          </ul>
+        </li>
+        <li>
+          <a href="/notes/new?cabinet=<%= tiroir.id %>">Ajouter une note</a>
+        </li>
+      </ul>
+    </li>
+  <% end %>
+  </ul>
+</main>

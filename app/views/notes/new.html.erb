@@ -1,0 +1,22 @@
+<main>
+  <button type="button" name="button" onclick="history.back()">Retour</button>
+  <%= render("modules/erreur", current: @note) %>
+  <%= @current_cabinet.inspect() %>
+  <%= form_for(@note) do |cabinet| %>
+    <%= fields_for :note do |field| %>
+      <p class="formulaire__groupe">
+        <%= field.label :titre %>
+        <%= field.text_field :titre %>
+      </p>
+      <p class="formulaire__groupe">
+        <%= field.label :contenu %>
+        <%= field.text_area :contenu %>
+      </p>
+      <p class="formulaire__groupe">
+        <%= field.label :cabinet_id %>
+        <%= field.number_field :cabinet_id, readonly: true, value: @current_cabinet %>
+      </p>
+      <%= field.submit value: "Ajouter la note"%>
+    <% end %>
+  <% end %>
+</main>
